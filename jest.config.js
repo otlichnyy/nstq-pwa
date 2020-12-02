@@ -1,6 +1,11 @@
 module.exports = {
   roots: ['<rootDir>'],
   moduleFileExtensions: ['js', 'ts', 'tsx', 'json'],
+  collectCoverageFrom: [
+    '**/*.{js,jsx,ts,tsx}',
+    '!**/*.d.ts',
+    '!**/node_modules/**',
+  ],
   testRegex: '((\\.|/*.)(spec))\\.(ts|tsx)?$',
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
   transform: {
