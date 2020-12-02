@@ -7,6 +7,9 @@ module.exports = {
     '!**/node_modules/**',
   ],
   testRegex: '((\\.|/*.)(spec))\\.(ts|tsx)?$',
+  testPathIgnorePatterns: [
+    '<rootDir>[/\\\\](node_modules|.next|.bit|dist)[/\\\\]',
+  ],
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
   transform: {
     '^.+\\.(ts|tsx)$': 'babel-jest',
