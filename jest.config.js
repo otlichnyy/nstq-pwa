@@ -1,10 +1,18 @@
 module.exports = {
   roots: ['<rootDir>'],
   moduleFileExtensions: ['js', 'ts', 'tsx', 'json'],
-  testPathIgnorePatterns: ['<rootDir>[/\\\\](node_modules|.next)[/\\\\]'],
+  collectCoverageFrom: [
+    '**/*.{js,jsx,ts,tsx}',
+    '!**/*.d.ts',
+    '!**/node_modules/**',
+  ],
+  testRegex: '((\\.|/*.)(spec))\\.(ts|tsx)?$',
+  testPathIgnorePatterns: [
+    '<rootDir>[/\\\\](node_modules|.next|.bit|dist)[/\\\\]',
+  ],
   transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$'],
   transform: {
-    '^.+\\.(ts|tsx)$': 'babel-jest',
+    '^.+\\.(js|jsx|ts|tsx)$': '<rootDir>/node_modules/babel-jest',
   },
   watchPlugins: [
     'jest-watch-typeahead/filename',
